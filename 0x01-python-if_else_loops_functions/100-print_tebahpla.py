@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-low = list(range(97, 123))
-upper = list(range(65, 91))
-for i in range(25, -1, -1):
-    a = chr(upper[i])
-    b = chr(low[i])
-    print("{}".format(a if i % 2 == 0 else b), end="")
+i = 0
+for c in range(ord('z'), ord('a') - 1, -1):
+    print("{}".format(chr(c - i)), end="")
+    i = 32 if i == 0 else 0
