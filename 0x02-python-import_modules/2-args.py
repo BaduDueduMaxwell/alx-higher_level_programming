@@ -9,6 +9,6 @@ if __name__ == "__main__":
         print("1 argument.")
     else:
         print(f"{count}", "arguments.")
-        for i in range(count):
-            sys.argv += i
-            print(f"{sys.argv}")
+    for i in range(count):
+        sys.argv += i
+        print(f"{sys.argv}")
