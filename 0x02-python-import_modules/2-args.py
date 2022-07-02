@@ -11,4 +11,4 @@ if __name__ == "__main__":
         print(f"{count}", "arguments.")
     for i in range(count):
         sys.argv += i
-        print(f"{sys.argv}")
+    print(f"{sys.argv}")
