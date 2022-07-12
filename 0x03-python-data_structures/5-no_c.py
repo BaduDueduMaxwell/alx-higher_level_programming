@@ -1,10 +1,9 @@
 #!/usr/bin/python3
-
 def no_c(my_string):
     length = len(my_string)
     a = ""
     for i in range(0, length):
-        if my_string[i] != 'c' or my_string[i] != 'C':
+        if my_string[i] == 'c' or my_string[i] == 'C':
             pass
         a = a + my_string[i]
     return("".join(copy))
