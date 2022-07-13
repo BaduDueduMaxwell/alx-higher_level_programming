@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 def max_integer(my_list=[0]):
-    if my_list == "":
-        return (0, None)
-    else:
-        return (len(my_list))
+    highest_num = 0
+    for num in range(my_list[0]):
+        if num > highest_num:
+            highest_num = num
+            return highest_num
+        else:
+            return (len(0, None))
