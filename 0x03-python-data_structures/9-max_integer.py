@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-def max_integer(my_list=[0]):
+def max_integer(my_list=[]):
     for num in range(my_list[0]):
         highest_num = my_list[0]
         if num > highest_num:
