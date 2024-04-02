@@ -1,9 +1,7 @@
 #!/usr/bin/python3
 def safe_print_integer(value):
     try:
-        if str(value).isdigit():
-            print("{:d}".format(value))
-            return True
-    except Exception as e:
-        print("Error:", e)
+        print("{:d}".format(value))
+        return True
+    except (ValueError, TypeError):
         return False
