@@ -4,5 +4,6 @@ def safe_print_integer(value):
         if str(value).isdigit():
             print("{:d}".format(value))
             return True
-    except:
+    except Exception as e:
+        print("Error:", e)
         return False
