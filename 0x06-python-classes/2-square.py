@@ -1,10 +1,8 @@
 #!/usr/bin/python3
 # 2-square.py by kode
-"""Defines a square """
-
-
 class Square:
-    """defines a sqr based on 1-square.py"""
+    """Represents a square shape with its size"""
+    
     def __init__(self, size=0):
         """Initializing this square object
         Args:
@@ -18,4 +16,4 @@ class Square:
             raise TypeError("size must be an integer")
         if size < 0:
             raise ValueError("size must be >= 0")
-        self.__sized = size
+        self.__size = size
