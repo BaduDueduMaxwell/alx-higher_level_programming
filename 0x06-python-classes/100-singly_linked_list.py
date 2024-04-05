@@ -1,10 +1,17 @@
 #!/usr/bin/python3
 # 100-singly_linked_list.py by kode
-""""defines a node of a singly linked list"""
+""""Represents a node of a singly linked list"""
 
 
 class Node:
     def __init__(self, data, next_node = None):
+        """
+        Initializes a new Node object.
+
+        Args:
+            data (int): The data value stored in the node.
+            next_node (Node, optional): A reference to the next node in the list. Defaults to None.
+        """
         self.data = data
         self.next_node = next_node
 
@@ -29,6 +36,7 @@ class Node:
         self.__next_node = value
 
 class SinglyLinkedList:
+    """Represents a singly linked list."""
     def __init__(self, value=0):
         self.__head = None
 
