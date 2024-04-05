@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+# 4-square.py by kode
+"""A module that defines a square"""
+
+
 class Square:
     """Represents a square with its size"""
     def __init__(self, size=0):
