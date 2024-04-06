@@ -50,11 +50,4 @@ class Square:
                 print(" " * self.__position[0] + "#" * self.size)
 
     def __str__(self):
-        """
-        Defines string representation for printing Square objects directly.
-
-        Returns:
-            str: String representation of the square.
-        """
-        self.my_print()
-        return ""
+        return self.my_print()
