@@ -4,6 +4,7 @@
 
 
 class Node:
+    """Represents a node of singly linked list"""
     def __init__(self, data, next_node = None):
         """
         Initializes a new Node object.
