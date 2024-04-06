@@ -13,9 +13,13 @@ class Node:
             data (int): The data value stored in the node.
             next_node (Node, optional): A reference to the next node in the list. Defaults to None.
         """
-        self.data = data
-        self.next_node = next_node
-
+        if not isinstance(data, int):
+            raise TypeError("data must be an integer")
+        self.__data = data
+        if not (next_node is None or isinstance(next_node, Node)):
+            raise TypeError("next_node must be a Node object")
+        self.__next_node = next_node
+        
     @property
     def data(self):
         return self.__data
@@ -47,18 +51,20 @@ class SinglyLinkedList:
         while current_node is not None:
             output += str(current_node.data) + "\n"
             current_node = current_node.next_node
-        return output
+        return output.rstrip()
 
     def sorted_insert(self, value):
         new_node = Node(value)
+        current = self.__head
+        prev = None
 
-        if self.__head is None or self.__head.data >= value:
+        while current and current.data < value:
+            prev = current
+            current = current.next_node
+
+        if not prev:
             new_node.next_node = self.__head
             self.__head = new_node
-            return
-
-        current_node = self.__head
-        while current_node.next_node is not None and current_node.next_node.data < value:
-            current_node = current_node.next_node
-        new_node.next_node = current_node.next_node
-        current_node.next_node = new_node
+        else:
+            new_node.next_node = current
+            prev.next_node = new_node
