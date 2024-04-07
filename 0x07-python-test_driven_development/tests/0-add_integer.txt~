@@ -1,5 +1,0 @@
-"""Test cases for 0-add_integer module"""
-=========================================
-
-Importing function from the module:
-	  >>> add_integer = __import__('0-add_integer').add_integer
