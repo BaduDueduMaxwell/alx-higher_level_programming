@@ -1,0 +1,25 @@
+"""Test cases for 0-add_integer module"""
+=========================================
+
+Importing function from the module:
+	  >>> add_integer = __import__('0-add_integer').add_integer
+
+Adding two positive integers (a = 4 and b = 8)
+       	  >>> add_integer(4, 8)
+	  12
+
+Adding one positive and one negative integer (a = 4, b = -8)
+          >>> add_integer(4, -8)
+	  -4
+
+Adding two negative integers (a = -10 and b = -4)
+          >>> add_integer(-10, -4)
+    	  -14
+
+Adding two integers with the second being the same as the default value of b (a = 2 and b = 98)
+       	  >>> add_integer(2)
+    	  100
+
+Adding a positive float and a positive integer (a = 2.5 and b = 5)
+       	 >>> add_integer(2.5, 5)
+    	 7
