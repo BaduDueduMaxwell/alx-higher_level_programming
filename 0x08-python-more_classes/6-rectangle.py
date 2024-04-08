@@ -7,9 +7,8 @@ class Rectangle:
     Defines a rectangle with properties for width and height,
     methods to get and set them, calculate area and perimeter.
     """
-
     number_of_instances = 0
-    
+
     def __init__(self, width=0, height=0):
         """
         Initializes objects.
@@ -53,8 +52,6 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         self.__height = value
 
-    
-        
     def area(self):
         """Calculates area of a rectangle"""
         return self.__height * self.__width
