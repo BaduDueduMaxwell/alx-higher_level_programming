@@ -3,7 +3,10 @@
 
 
 class Rectangle:
-    """Represents a class that defines a rectangle"""
+    """
+    Defines a rectangle with properties for width and height,
+    methods to get and set them, calculate area and perimeter.
+    """
     def __init__(self, width=0, height=0):
         """
         Initializes objects.
@@ -51,5 +54,12 @@ class Rectangle:
         return self.__height * self.__width
 
     def perimeter(self):
-        """Calculate the perimeter of the rectangle"""
+        """
+        Calculates and returns the perimeter of the rectangle.
+
+        Returns:
+            int: The perimeter of the rectangle (0 if width or height is 0).
+        """
+        if self.__width == 0 or self.__height == 0:
+            return 0
         return ((self.__width + self.__height) * 2)
