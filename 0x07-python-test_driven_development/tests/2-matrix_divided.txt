@@ -4,7 +4,7 @@
 >>> mat = [[1, 2, 3], [2, 3, 4]]
 >>> matrix_divided(mat, 0)
 Traceback (most recent call last):
-ZeroDivisionError: diviion by zero
+ZeroDivisionError: division by zero
 
 >>> matrix_divided([], 3)
 Tracebook (most recent call last):
