@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""This module appends a string at the end of a text file and returns num of chaacters"""
+"""This module appends a string at the end of a text file\
+ and returns num of chaacters"""
 
 
 def append_write(filename="", text=""):
