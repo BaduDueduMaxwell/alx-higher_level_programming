@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+from models.base import Base
 """This module defines a Rectangle class that inherits from Base class"""
 
 
@@ -11,4 +12,4 @@ class Rectangle(Base):
         self.__x = x
         self.__y = y
 
-        super().__init('Base')
+        super().__init__(id)
