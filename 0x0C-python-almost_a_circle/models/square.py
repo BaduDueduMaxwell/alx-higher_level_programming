@@ -34,7 +34,7 @@ class Square(Rectangle):
     def update(self, *args, **kwargs):
         """Replaces attributes of square class"""
         if args:
-            attrs = ["id", "width", "height", "x", "y"]
+            attrs = ["id", "size", "x", "y"]
             for i, arg in enumerate(args):
                 setattr(self, attrs[i], arg)
         else:
