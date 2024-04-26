@@ -8,10 +8,6 @@ class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         """Initialization of instances"""
         super().__init__(size, size, x, y, id)
-        self.width = size
-        self.height = size
-        self.x = x
-        self.y = y
 
     def __str__(self):
         return "[Square] ({}) {}/{} - {}"\
@@ -32,4 +28,5 @@ class Square(Rectangle):
     @size.setter
     def size(self, value):
         """setter for width size"""
-        self.__width = value
+        self.width = value
+        self.height = value
