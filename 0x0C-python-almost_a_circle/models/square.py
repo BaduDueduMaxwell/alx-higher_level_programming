@@ -23,3 +23,13 @@ class Square(Rectangle):
             print()
         for _ in range(self.height):
             print(" " * self.x + "#" * self.width)
+
+    @property
+    def size(self):
+        """getter for width size"""
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """setter for width size"""
+        self.__width = value
