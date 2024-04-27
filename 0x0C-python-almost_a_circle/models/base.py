@@ -19,7 +19,7 @@ class Base:
     def to_json_string(list_dictionaries):
         """Returns the JSON string representation of list dict"""
         if list_dictionaries is None or len(list_dictionaries) == 0:
-            return "[]"
+            return []
         return json.dumps(list_dictionaries)
 
     @classmethod
@@ -38,5 +38,19 @@ class Base:
     def from_json_string(json_string):
         """Returns the list of the JSON string representation json_string"""
         if json_string is None or len(json_string) == 0:
-            return "[]"
+            return []
         return json.loads(json_string)
+
+    @classmethod
+    def load_from_file(cls):
+        """Returns a list of instances from a JSON file"""
+        filename = cls.__name__ + ".json"
+        try:
+            with open(filename, "r") as file:
+                json_str = file.read()
+                dict_list = cls.from_json_string(json_str)
+                return [cls.create(**dict_obj) for dict_obj in dict_list]
+        except FileNotFoundError:
+            return []
+
+    
