@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 """Module for Base class"""
 import json
-from models.rectangle import Rectangle
-from models.square import Square
+
 
 class Base:
     """Base class for managing id attribute"""
@@ -16,20 +15,18 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
-    @staticmethod
-    def create(**dictionary):
-        """ Create instance with all attributes set """
-        if dictionary and dictionary != {}:
-            if dictionary.get('width'):
-                dummy = Rectangle(1, 1)
-            elif dictionary.get('size'):
-                dummy = Square(1)
-            else:
-                return None
-
-            dummy.update(**dictionary)
-            return dummy
-
+    @classmethod
+    def create(cls, **dictionary):
+        """Return instance with all attributes already set"""
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1, 1)  # Dummy instance
+        elif cls.__name__ == "Square":
+            dummy = cls(1)  # Dummy instance
+        else:
+            return None
+        
+        dummy.update(**dictionary)
+        return dummy
 
     @staticmethod
     def to_json_string(list_dictionaries):
