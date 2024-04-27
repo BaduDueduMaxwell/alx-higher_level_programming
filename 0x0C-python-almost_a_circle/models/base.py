@@ -52,3 +52,14 @@ class Base:
         if json_string is None or len(json_string) == 0:
             return []
         return json.loads(json_string)
+
+    @classmethod
+    def load_from_file(cls):
+        """Returns a list of instances"""
+        filename = cls.__name__ + ".json"
+        try:
+            with open(filename, mode="r", encoding="utf-8") as file:
+                objs = cls.from_json_string(file.read())
+                return [cls.create(**obj) for obj in objs]
+        except FileNotFoundError:
+            return []
