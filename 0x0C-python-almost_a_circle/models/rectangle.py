@@ -13,11 +13,6 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
-    @staticmethod
-    def create(**attributes):
-        """Creates a Rectangle instance from dictionary"""
-        return Rectangle(**attributes)
-
     @property
     def width(self):
         """Getter for width"""

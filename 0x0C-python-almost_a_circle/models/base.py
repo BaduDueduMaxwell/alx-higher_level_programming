@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """Module for Base class"""
 import json
-
+from models.rectangle import Rectangle
+from models.square import Square
 
 class Base:
     """Base class for managing id attribute"""
@@ -14,6 +15,21 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    @staticmethod
+    def create(**dictionary):
+        """ Create instance with all attributes set """
+        if dictionary and dictionary != {}:
+            if dictionary.get('width'):
+                dummy = Rectangle(1, 1)
+            elif dictionary.get('size'):
+                dummy = Square(1)
+            else:
+                return None
+
+            dummy.update(**dictionary)
+            return dummy
+
 
     @staticmethod
     def to_json_string(list_dictionaries):
@@ -40,15 +56,3 @@ class Base:
         if json_string is None or len(json_string) == 0:
             return []
         return json.loads(json_string)
-
-    @classmethod
-    def load_from_file(cls):
-        """Returns a list of instances from a JSON file"""
-        filename = cls.__name__ + ".json"
-        try:
-            with open(filename, "r") as file:
-                json_str = file.read()
-                dict_list = cls.from_json_string(json_str)
-                return [cls.create(**dict_obj) for dict_obj in dict_list]
-        except FileNotFoundError:
-            return []
