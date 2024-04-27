@@ -24,7 +24,6 @@ class Base:
             dummy = cls(1)  # Dummy instance
         else:
             return None
-        
         dummy.update(**dictionary)
         return dummy
 
