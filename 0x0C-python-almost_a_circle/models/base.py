@@ -52,5 +52,3 @@ class Base:
                 return [cls.create(**dict_obj) for dict_obj in dict_list]
         except FileNotFoundError:
             return []
-
-    
