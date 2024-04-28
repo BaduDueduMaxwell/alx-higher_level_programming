@@ -70,12 +70,12 @@ class Base:
         """Serialize list_objs to CSV file"""
         filename = cls.__name__ + ".csv"
         with open(filename, mode='w', encoding='utf-8') as f:
-            writer = csv.writer(f)
-            for obj in list_objs:
+            write = csv.writer(f)
+            for ob in list_objs:
                 if cls.__name__ == "Rectangle":
-                    writer.writerow([obj.id, obj.width, obj.height, obj.x, obj.y])
+                    write.writerow([ob.id, ob.width, ob.height, ob.x, ob.y])
                 elif cls.__name__ == "Square":
-                    writer.writerow([obj.id, obj.size, obj.x, obj.y])
+                    write.writerow([ob.id, ob.size, ob.x, ob.y])
 
     @classmethod
     def load_from_file_csv(cls):
