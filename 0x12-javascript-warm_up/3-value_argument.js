@@ -9,5 +9,5 @@ while (args[count] !== undefined) {
 if (count === 0) {
   console.log('No argument');
 } else {
-  console.log('Argument found');
+  console.log(`${args[0]}`);
 }
