@@ -1,5 +1,5 @@
 #!/usr/bin/node
-const args = process.argv.slice(1);
+const args = process.argv.slice(2);
 let count = 0;
 
 while (args[count] !== undefined) {
@@ -9,5 +9,5 @@ while (args[count] !== undefined) {
 if (count === 0) {
   console.log('No argument');
 } else {
-  console.log('Argument found');
+  console.log(`${args[0]}`);
 }
