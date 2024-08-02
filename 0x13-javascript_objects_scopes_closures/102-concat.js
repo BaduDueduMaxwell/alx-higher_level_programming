@@ -1,24 +1,14 @@
 #!/usr/bin/node
+const fileA = process.argv[2];
+const fileB = process.argv[3];
+const fileC = process.argv[4];
+
 const fs = require('fs');
+const textA = fs.readFileSync(fileA, 'utf8');
+const textB = fs.readFileSync(fileB, 'utf8');
 
-// Get file paths from command line arguments
-const [, , fileA, fileB, fileC] = process.argv;
+const newText = textA + textB;
 
-// Read content of fileA
-fs.readFile(fileA, 'utf8', (err, dataA) => {
+fs.appendFile(fileC, newText, function (err) {
   if (err) throw err;
-
-  // Read content of fileB
-  fs.readFile(fileB, 'utf8', (err, dataB) => {
-    if (err) throw err;
-
-    // Concatenate contents of fileA and fileB
-    const concatenatedContent = `${dataA}${dataB}`;
-
-    // Write concatenated content to fileC
-    fs.writeFile(fileC, concatenatedContent, (err) => {
-      if (err) throw err;
-      console.log(`Concatenated content has been written to ${fileC}`);
-    });
-  });
 });
