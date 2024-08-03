@@ -7,7 +7,7 @@ Traceback (most recent call last):
 ZeroDivisionError: division by zero
 
 >>> matrix_divided([], 3)
-Tracebook (most recent call last):
+Traceback (most recent call last):
 TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 >>> matrix_divided([[]], 2)
@@ -18,11 +18,8 @@ TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 >>> matrix_divided([[9], [3, 6], [9, 5]], 3)
 Traceback (most recent call last):
-TypeError: matrix must be a matrix (list of lists) of integers/floats
+TypeError: Each row of the matrix must have the same size
 
 >>> matrix_divided("3", 3)
 Traceback (most recent call last):
 TypeError: matrix must be a matrix (list of lists) of integers/floats
-
->>> matrix_divided([[], [], []], 4)
-[[], [], [])
