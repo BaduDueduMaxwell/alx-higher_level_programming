@@ -14,10 +14,9 @@ if __name__ == '__main__':
     """
     db_connect = MySQLdb.connect(
         host="localhost", user=argv[1], port=3306, passwd=argv[2], db=argv[3])
-
     db_cursor = db_connect.cursor()
 
-    query = "SELECT * FROM states WHERE name = '{}'".format(argv[4])
+    query = "SELECT * FROM states WHERE BINARY name = '{}'".format(argv[4])
     db_cursor.execute(query)
 
     states = db_cursor.fetchall()
