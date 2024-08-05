@@ -11,7 +11,8 @@ from model_state import Base, State
 
 if __name__ == '__main__':
     if len(sys.argv) != 5:
-        print("Usage: ./10-model_state_my_get.py <mysql username> <mysql password> <database name> <state name>")
+        print("Usage: ./10-model_state_my_get.py <mysql username> <mysql \
+password> <database name> <state name>")
         sys.exit(1)
 
     username = sys.argv[1]
@@ -20,7 +21,8 @@ if __name__ == '__main__':
     state_name = sys.argv[4]
 
     # Create engine
-    engine = create_engine(f'mysql+mysqldb://{username}:{password}@localhost:3306/{database}', pool_pre_ping=True)
+    engine = create_engine(f'mysql+mysqldb://{username}:{password}\
+@localhost:3306/{database}', pool_pre_ping=True)
 
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
