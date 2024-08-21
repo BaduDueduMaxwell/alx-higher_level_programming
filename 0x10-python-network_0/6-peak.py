@@ -1,11 +1,13 @@
 #!/usr/bin/python3
-
+"""Module for finding a peak in a list of unsorted integers using a binary search algorithm."""
 
 def find_peak(list_of_integers):
+    """Find a peak element in a list of unsorted integers using binary search."""
     if not list_of_integers:
         return None
 
     def binary_search_peak(low, high):
+        """Perform binary search to find a peak in the list."""
         if low == high:
             return list_of_integers[low]
 
